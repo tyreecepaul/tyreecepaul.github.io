@@ -1,2 +1,2 @@
 # tyreecepaul.github.io
-portfolio website
+portfolio website (will eventually finish)
