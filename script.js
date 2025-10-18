@@ -96,15 +96,29 @@ document.addEventListener('DOMContentLoaded', function() {
             const experienceItem = this.closest('.experience-item');
             const isExpanded = experienceItem.classList.contains('expanded');
             
-            // Close all other items
-            document.querySelectorAll('.experience-item').forEach(item => {
-                if (item !== experienceItem) {
-                    item.classList.remove('expanded');
-                }
-            });
+            // Get all experience items
+            const allItems = document.querySelectorAll('.experience-item');
             
-            // Toggle current item
-            experienceItem.classList.toggle('expanded');
+            if (isExpanded) {
+                // If clicking on an expanded item, collapse it and remove all collapsed states
+                experienceItem.classList.remove('expanded');
+                allItems.forEach(item => {
+                    item.classList.remove('collapsed');
+                });
+            } else {
+                // Collapse all items and expand the clicked one
+                allItems.forEach(item => {
+                    item.classList.remove('expanded');
+                    if (item !== experienceItem) {
+                        item.classList.add('collapsed');
+                    } else {
+                        item.classList.remove('collapsed');
+                    }
+                });
+                
+                // Expand current item
+                experienceItem.classList.add('expanded');
+            }
         });
     });
 
@@ -682,4 +696,55 @@ document.addEventListener('DOMContentLoaded', function() {
             bonsaiInstance.grow();
         }, 15000);
     }
+});
+
+// ===================================
+// Scroll Progress Bar
+// ===================================
+function updateScrollProgress() {
+    const mainContent = document.querySelector('.main-content');
+    const progressFill = document.querySelector('.scroll-progress-fill');
+    const progressBar = document.querySelector('.scroll-progress-bar');
+    
+    if (mainContent && progressFill && progressBar) {
+        const scrollTop = mainContent.scrollTop;
+        const scrollHeight = mainContent.scrollHeight - mainContent.clientHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+        
+        progressFill.style.width = `${Math.min(scrollPercentage, 100)}%`;
+        progressBar.setAttribute('aria-valuenow', Math.round(scrollPercentage));
+    }
+}
+
+// Update scroll progress on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const mainContent = document.querySelector('.main-content');
+    
+    if (mainContent) {
+        mainContent.addEventListener('scroll', updateScrollProgress);
+        // Initial update
+        updateScrollProgress();
+    }
+});
+
+// ===================================
+// Smooth Scroll Enhancement
+// ===================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling to all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
 });

@@ -3,41 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[STUDENT NAME] - Portfolio</title>
+    <meta name="description" content="Tyreece Paul - Computer Science and Mathematics Student Portfolio. Explore my projects, skills, and experience in software engineering, machine learning, and data science.">
+    <meta name="keywords" content="Tyreece Paul, Computer Science, Mathematics, Machine Learning, Portfolio, Software Engineering, Data Science">
+    <meta name="author" content="Tyreece Paul">
+    <meta name="theme-color" content="#6B7FD7">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tyreece Paul - Portfolio">
+    <meta property="og:description" content="Computer Science and Mathematics Student Portfolio">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tyreece Paul - Portfolio">
+    <meta name="twitter:description" content="Computer Science and Mathematics Student Portfolio">
+    
+    <title>Tyreece Paul - Computer Science & Mathematics Portfolio</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-bar" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="scroll-progress-fill"></div>
+    </div>
+    
     <!-- Game of Life Background Canvas -->
-    <canvas id="gameOfLifeCanvas" class="game-of-life-canvas"></canvas>
+    <canvas id="gameOfLifeCanvas" class="game-of-life-canvas" aria-hidden="true"></canvas>
     
     <!-- Right Side Navigation Catalog -->
-    <nav class="right-catalog" id="rightCatalog">
+    <nav class="right-catalog" id="rightCatalog" role="navigation" aria-label="Main navigation">
         <div class="catalog-header">
             <h3>Tyreece Paul</h3>
-            <button class="catalog-toggle" id="catalogToggle">
-                <i class="fas fa-bars"></i>
+            <button class="catalog-toggle" id="catalogToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
-        <ul class="catalog-menu">
-            <li><a href="#home" class="catalog-link active" data-section="home">
-                <i class="fas fa-home"></i> Home
+        <ul class="catalog-menu" role="menu">
+            <li role="none"><a href="#home" class="catalog-link active" data-section="home" role="menuitem">
+                <i class="fas fa-home" aria-hidden="true"></i> <span>Home</span>
             </a></li>
-            <li><a href="#about" class="catalog-link" data-section="about">
-                <i class="fas fa-user"></i> About
+            <li role="none"><a href="#about" class="catalog-link" data-section="about" role="menuitem">
+                <i class="fas fa-user" aria-hidden="true"></i> <span>About</span>
             </a></li>
-            <li><a href="#stack" class="catalog-link" data-section="stack">
-                <i class="fas fa-code"></i> Stack
+            <li role="none"><a href="#stack" class="catalog-link" data-section="stack" role="menuitem">
+                <i class="fas fa-code" aria-hidden="true"></i> <span>Stack</span>
             </a></li>
-            <li><a href="#experience" class="catalog-link" data-section="experience">
-                <i class="fas fa-briefcase"></i> Experience
+            <li role="none"><a href="#experience" class="catalog-link" data-section="experience" role="menuitem">
+                <i class="fas fa-briefcase" aria-hidden="true"></i> <span>Experience</span>
             </a></li>
-            <li><a href="#projects" class="catalog-link" data-section="projects">
-                <i class="fas fa-folder-open"></i> Projects
+            <li role="none"><a href="#projects" class="catalog-link" data-section="projects" role="menuitem">
+                <i class="fas fa-folder-open" aria-hidden="true"></i> <span>Projects</span>
             </a></li>
-            <li><a href="#contact" class="catalog-link" data-section="contact">
-                <i class="fas fa-envelope"></i> Contact
+            <li role="none"><a href="#contact" class="catalog-link" data-section="contact" role="menuitem">
+                <i class="fas fa-envelope" aria-hidden="true"></i> <span>Contact</span>
             </a></li>
         </ul>
         <!-- Terminal Window with Bonsai -->
@@ -111,21 +138,65 @@
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
+                
                 <div class="about-content">
-                    <div class="about-image">
-                        <div class="image-placeholder">[IMAGE]</div>
+                    <div class="about-left">
+                        <div class="about-image">
+                            <div class="image-gallery" role="region" aria-label="Image gallery" aria-live="polite">
+                                <div class="gallery-image active" role="img" aria-label="Gallery image 1">
+                                    <div class="image-placeholder">[IMAGE 1]</div>
+                                </div>
+                                <div class="gallery-image" role="img" aria-label="Gallery image 2">
+                                    <div class="image-placeholder">[IMAGE 2]</div>
+                                </div>
+                                <div class="gallery-image" role="img" aria-label="Gallery image 3">
+                                    <div class="image-placeholder">[IMAGE 3]</div>
+                                </div>
+                                <div class="gallery-image" role="img" aria-label="Gallery image 4">
+                                    <div class="image-placeholder">[IMAGE 4]</div>
+                                </div>
+                            </div>
+                            <div class="gallery-controls" role="group" aria-label="Gallery controls">
+                                <button class="gallery-btn gallery-prev" aria-label="Previous image" title="Previous image">
+                                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                                <div class="gallery-indicators" role="tablist" aria-label="Image indicators">
+                                    <button class="gallery-dot active" data-index="0" role="tab" aria-label="Go to image 1" aria-selected="true"></button>
+                                    <button class="gallery-dot" data-index="1" role="tab" aria-label="Go to image 2" aria-selected="false"></button>
+                                    <button class="gallery-dot" data-index="2" role="tab" aria-label="Go to image 3" aria-selected="false"></button>
+                                    <button class="gallery-dot" data-index="3" role="tab" aria-label="Go to image 4" aria-selected="false"></button>
+                                </div>
+                                <button class="gallery-btn gallery-next" aria-label="Next image" title="Next image">
+                                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <h3>[SUBHEADING]</h3>
+                            <p>[PARAGRAPH]</p>
+                            <p>[PARAGRAPH]</p>
+                            <div class="skills-section">
+                                <h4>Skills</h4>
+                                <div class="skills-grid">
+                                    <span class="skill-tag">[SKILL]</span>
+                                    <span class="skill-tag">[SKILL]</span>
+                                    <span class="skill-tag">[SKILL]</span>
+                                    <span class="skill-tag">[SKILL]</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="about-text">
-                        <h3>[SUBHEADING]</h3>
-                        <p>[PARAGRAPH]</p>
-                        <p>[PARAGRAPH]</p>
-                        <div class="skills-section">
-                            <h4>Skills</h4>
-                            <div class="skills-grid">
-                                <span class="skill-tag">[SKILL]</span>
-                                <span class="skill-tag">[SKILL]</span>
-                                <span class="skill-tag">[SKILL]</span>
-                                <span class="skill-tag">[SKILL]</span>
+                    
+                    <!-- Asteroids Game -->
+                    <div class="asteroids-container">
+                        <div class="asteroids-game">
+                            <canvas id="asteroidsCanvas"></canvas>
+                            <div class="asteroids-controls">
+                                <button id="asteroidsModeBtn" class="asteroids-btn">Switch to Player</button>
+                                <button id="asteroidsResetBtn" class="asteroids-btn">Reset</button>
+                            </div>
+                            <div class="asteroids-instructions">
+                                <span class="asteroids-help">Player: Arrow/WASD + Space</span>
                             </div>
                         </div>
                     </div>
@@ -587,6 +658,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="gameoflife.js"></script>
     <script src="pong.js"></script>
+    <script src="asteroids.js"></script>
+    <script src="gallery.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
