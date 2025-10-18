@@ -3,57 +3,571 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[STUDENT NAME] - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Tyreece Paul</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Placeholder for the navbar -->
-    <div id="navbar"></div>
-    <div class="container-fluid bg-dark text-white py-5">
-        <div class="text-center">
-            <h1 class="display-1 mb-4">Tyreece Paul</h1>
-            <h4 class="mb-4">Computer Science Student</h4>
-            <button type="button" class="btn btn-light rounded-pill mx-1" style="width: 145px;">Projects</button>
-            <button type="button" class="btn btn-outline-light rounded-pill mx-1" style="width: 145px;">Contact</button>
+    <!-- Right Side Navigation Catalog -->
+    <nav class="right-catalog" id="rightCatalog">
+        <div class="catalog-header">
+            <h3>Tyreece Paul</h3>
+            <button class="catalog-toggle" id="catalogToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </div>
-
-    <div class="container-fluid py-5">
-        <div class="row">
-            <div class="container-md">
-                <div class="col-md-6">
-                    <img src="" class="img-fluid" alt="">
+        <ul class="catalog-menu">
+            <li><a href="#home" class="catalog-link active" data-section="home">
+                <i class="fas fa-home"></i> Home
+            </a></li>
+            <li><a href="#about" class="catalog-link" data-section="about">
+                <i class="fas fa-user"></i> About
+            </a></li>
+            <li><a href="#stack" class="catalog-link" data-section="stack">
+                <i class="fas fa-code"></i> Stack
+            </a></li>
+            <li><a href="#experience" class="catalog-link" data-section="experience">
+                <i class="fas fa-briefcase"></i> Experience
+            </a></li>
+            <li><a href="#projects" class="catalog-link" data-section="projects">
+                <i class="fas fa-folder-open"></i> Projects
+            </a></li>
+            <li><a href="#contact" class="catalog-link" data-section="contact">
+                <i class="fas fa-envelope"></i> Contact
+            </a></li>
+        </ul>
+        <!-- Terminal Window with Bonsai -->
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-button close"></span>
+                    <span class="terminal-button minimize"></span>
+                    <span class="terminal-button maximize"></span>
                 </div>
-                <div class="col-md-6">
-                    <section id="about">
-                        <p>I am a <strong>Computer Science student</strong> pursuing a 
-                            <strong>dual major in Machine Learning and Data Science</strong>, 
-                            currently on a <strong>vertical degree path toward a Master's in Data Science</strong>, 
-                            with aspirations of eventually earning a <em>PhD</em>. My passion lies at the intersection of 
-                            technology and problem-solving, with a strong focus on 
-                            <strong>automation, recommender systems, natural language processing (NLP), and computer vision</strong>.</p>
-                        <p>My ultimate goal is to become a <strong>Full Stack Machine Learning Engineer</strong>, 
-                            leveraging both <strong>data-driven insights</strong> and <strong>software development</strong> 
-                            to build impactful AI solutions. Beyond academics, I have a deep interest in 
-                            <strong>entrepreneurship, leadership, and innovation</strong>—constantly exploring ways 
-                            to bridge cutting-edge research with real-world applications.</p>
-                        <p>I enjoy working on <strong>personal projects</strong> that push the boundaries of my technical skills, 
-                            and I actively share my work on <strong>GitHub</strong>. Feel free to connect with me on 
-                            <strong>LinkedIn</strong> to discuss collaborations, networking, or potential opportunities.</p>
-                    </section> 
+                <div class="terminal-title">~/bonsai.sh</div>
+            </div>
+            <div class="terminal-body" id="bonsaiTerminal">
+                <div class="terminal-prompt">$ ./bonsai.sh --live</div>
+                <pre id="bonsaiTree"></pre>
+            </div>
+        </div>
+
+        <div class="catalog-footer">
+            <h4>Connect</h4>
+            <div class="social-links">
+                <a href="[GITHUB_URL]" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="[LINKEDIN_URL]" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="[KAGGLE_URL]" target="_blank" aria-label="Kaggle">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+            </div>
+            <a href="[CV_FILE_PATH]" download="Tyreece_Paul_CV.pdf" class="cv-download-btn" aria-label="Download CV">
+                <i class="fas fa-file-download"></i>
+                <span>Download CV</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hello, I'm Tyreece</I></h1>
+                    <h2 class="hero-subtitle">Computer Science [ML] / Mathematics [MAI]</h2>
+                    <p class="hero-description">my wife said i cannot leave sexy wife here</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">[BUTTON_TEXT]</a>
+                        <a href="#about" class="btn btn-outline">[BUTTON_TEXT]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-placeholder">[IMAGE]</div>
+                    </div>
+                    <div class="about-text">
+                        <h3>[SUBHEADING]</h3>
+                        <p>[PARAGRAPH]</p>
+                        <p>[PARAGRAPH]</p>
+                        <div class="skills-section">
+                            <h4>Skills</h4>
+                            <div class="skills-grid">
+                                <span class="skill-tag">[SKILL]</span>
+                                <span class="skill-tag">[SKILL]</span>
+                                <span class="skill-tag">[SKILL]</span>
+                                <span class="skill-tag">[SKILL]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack Section -->
+        <section id="stack" class="section">
+            <div class="container">
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-description">[PARAGRAPH]</p>
+                
+                <div class="stack-grid">
+                    <!-- Frontend -->
+                    <div class="stack-category">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Software Engineering</h3>
+                        <div class="stack-items">
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="stack-category">
+                        <div class="category-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Data Science and Analytics</h3>
+                        <div class="stack-items">
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Science & ML -->
+                    <div class="stack-category">
+                        <div class="category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Machine Learning Engineering</h3>
+                        <div class="stack-items">
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Others -->
+                    <div class="stack-category">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>DevOps</h3>
+                        <div class="stack-items">
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                            <div class="stack-item">
+                                <div class="stack-item-icon">[ICON]</div>
+                                <span>[TECHNOLOGY]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-description">[PARAGRAPH]</p>
+                
+                <div class="experience-timeline">
+                    <!-- Experience Item 1 (Most Recent) -->
+                    <div class="experience-item">
+                        <div class="experience-date">[DATE_RANGE]</div>
+                        <div class="experience-content">
+                            <div class="experience-header" data-toggle="experience">
+                                <div class="header-info">
+                                    <h3>[JOB_TITLE]</h3>
+                                    <h4>[COMPANY_NAME]</h4>
+                                    <p class="experience-summary">[SHORT_DESCRIPTION]</p>
+                                </div>
+                                <button class="expand-btn" aria-label="Expand details">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="experience-details">
+                                <p class="experience-description">[DETAILED_DESCRIPTION]</p>
+                                <h5>Key Achievements</h5>
+                                <ul class="experience-achievements">
+                                    <li>[ACHIEVEMENT]</li>
+                                    <li>[ACHIEVEMENT]</li>
+                                    <li>[ACHIEVEMENT]</li>
+                                </ul>
+                                <h5>Technologies Used</h5>
+                                <div class="experience-tags">
+                                    <span class="exp-tag">[SKILL]</span>
+                                    <span class="exp-tag">[SKILL]</span>
+                                    <span class="exp-tag">[SKILL]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="experience-item">
+                        <div class="experience-date">[DATE_RANGE]</div>
+                        <div class="experience-content">
+                            <div class="experience-header" data-toggle="experience">
+                                <div class="header-info">
+                                    <h3>[JOB_TITLE]</h3>
+                                    <h4>[COMPANY_NAME]</h4>
+                                    <p class="experience-summary">[SHORT_DESCRIPTION]</p>
+                                </div>
+                                <button class="expand-btn" aria-label="Expand details">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="experience-details">
+                                <p class="experience-description">[DETAILED_DESCRIPTION]</p>
+                                <h5>Key Achievements</h5>
+                                <ul class="experience-achievements">
+                                    <li>[ACHIEVEMENT]</li>
+                                    <li>[ACHIEVEMENT]</li>
+                                    <li>[ACHIEVEMENT]</li>
+                                </ul>
+                                <h5>Technologies Used</h5>
+                                <div class="experience-tags">
+                                    <span class="exp-tag">[SKILL]</span>
+                                    <span class="exp-tag">[SKILL]</span>
+                                    <span class="exp-tag">[SKILL]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3 -->
+                    <div class="experience-item">
+                        <div class="experience-date">[DATE_RANGE]</div>
+                        <div class="experience-content">
+                            <div class="experience-header" data-toggle="experience">
+                                <div class="header-info">
+                                    <h3>[JOB_TITLE]</h3>
+                                    <h4>[COMPANY_NAME]</h4>
+                                    <p class="experience-summary">[SHORT_DESCRIPTION]</p>
+                                </div>
+                                <button class="expand-btn" aria-label="Expand details">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="experience-details">
+                                <p class="experience-description">[DETAILED_DESCRIPTION]</p>
+                                <h5>Key Achievements</h5>
+                                <ul class="experience-achievements">
+                                    <li>[ACHIEVEMENT]</li>
+                                    <li>[ACHIEVEMENT]</li>
+                                    <li>[ACHIEVEMENT]</li>
+                                </ul>
+                                <h5>Technologies Used</h5>
+                                <div class="experience-tags">
+                                    <span class="exp-tag">[SKILL]</span>
+                                    <span class="exp-tag">[SKILL]</span>
+                                    <span class="exp-tag">[SKILL]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 4 (Earliest) -->
+                    <div class="experience-item">
+                        <div class="experience-date">[DATE_RANGE]</div>
+                        <div class="experience-content">
+                            <div class="experience-header" data-toggle="experience">
+                                <div class="header-info">
+                                    <h3>[JOB_TITLE]</h3>
+                                    <h4>[COMPANY_NAME]</h4>
+                                    <p class="experience-summary">[SHORT_DESCRIPTION]</p>
+                                </div>
+                                <button class="expand-btn" aria-label="Expand details">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="experience-details">
+                                <p class="experience-description">[DETAILED_DESCRIPTION]</p>
+                                <h5>Key Achievements</h5>
+                                <ul class="experience-achievements">
+                                    <li>[ACHIEVEMENT]</li>
+                                    <li>[ACHIEVEMENT]</li>
+                                    <li>[ACHIEVEMENT]</li>
+                                </ul>
+                                <h5>Technologies Used</h5>
+                                <div class="experience-tags">
+                                    <span class="exp-tag">[SKILL]</span>
+                                    <span class="exp-tag">[SKILL]</span>
+                                    <span class="exp-tag">[SKILL]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-description">[PARAGRAPH]</p>
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card" data-project="1">
+                        <div class="project-image">[IMAGE]</div>
+                        <div class="project-info">
+                            <h3>[PROJECT_TITLE]</h3>
+                            <p>[PROJECT_DESCRIPTION]</p>
+                            <div class="project-tags">
+                                <span class="tag">[TAG]</span>
+                                <span class="tag">[TAG]</span>
+                            </div>
+                            <button class="btn-view-project">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card" data-project="2">
+                        <div class="project-image">[IMAGE]</div>
+                        <div class="project-info">
+                            <h3>[PROJECT_TITLE]</h3>
+                            <p>[PROJECT_DESCRIPTION]</p>
+                            <div class="project-tags">
+                                <span class="tag">[TAG]</span>
+                                <span class="tag">[TAG]</span>
+                            </div>
+                            <button class="btn-view-project">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card" data-project="3">
+                        <div class="project-image">[IMAGE]</div>
+                        <div class="project-info">
+                            <h3>[PROJECT_TITLE]</h3>
+                            <p>[PROJECT_DESCRIPTION]</p>
+                            <div class="project-tags">
+                                <span class="tag">[TAG]</span>
+                                <span class="tag">[TAG]</span>
+                            </div>
+                            <button class="btn-view-project">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card" data-project="4">
+                        <div class="project-image">[IMAGE]</div>
+                        <div class="project-info">
+                            <h3>[PROJECT_TITLE]</h3>
+                            <p>[PROJECT_DESCRIPTION]</p>
+                            <div class="project-tags">
+                                <span class="tag">[TAG]</span>
+                                <span class="tag">[TAG]</span>
+                            </div>
+                            <button class="btn-view-project">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contacts</h2>
+                <p class="section-description">[PARAGRAPH]</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>[SUBHEADING]</h3>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <a href="mailto:[EMAIL]">[EMAIL]</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Phone</h4>
+                                    <a href="tel:[PHONE]">[PHONE]</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Location</h4>
+                                    <p>[LOCATION]</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <h4>Connect With Me</h4>
+                            <div class="social-links-large">
+                                <a href="[GITHUB_URL]" target="_blank" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="[LINKEDIN_URL]" target="_blank" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="[KAGGLE_URL]" target="_blank" aria-label="Kaggle">
+                                    <i class="fab fa-kaggle"></i>
+                                    <span>Kaggle</span>
+                                </a>
+                                <a href="[CV_FILE_PATH]" download="Tyreece_Paul_CV.pdf" aria-label="Download CV">
+                                    <i class="fas fa-file-download"></i>
+                                    <span>Download CV</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <h3>[FORM_HEADING]</h3>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="[PLACEHOLDER]" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="[PLACEHOLDER]" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="[PLACEHOLDER]" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="[PLACEHOLDER]" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Detail Slide-in Panel -->
+    <div class="project-panel" id="projectPanel">
+        <div class="panel-header">
+            <h2 id="panelTitle">[PROJECT_TITLE]</h2>
+            <button class="panel-close" id="closePanel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="panel-image">[IMAGE]</div>
+            <div class="panel-info">
+                <h3>[HEADING]</h3>
+                <p id="panelDescription">[PARAGRAPH]</p>
+                
+                <h4>[HEADING]</h4>
+                <ul id="panelFeatures">
+                    <li>[FEATURE]</li>
+                    <li>[FEATURE]</li>
+                    <li>[FEATURE]</li>
+                </ul>
+                
+                <h4>[HEADING]</h4>
+                <div id="panelTechnologies">
+                    <span class="tech-badge">[TECH]</span>
+                    <span class="tech-badge">[TECH]</span>
+                    <span class="tech-badge">[TECH]</span>
+                </div>
+                
+                <div class="panel-links">
+                    <a href="[GITHUB_URL]" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="[DEMO_URL]" class="btn btn-outline" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript to load the navbar -->
-    <script>
-        fetch('nav.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-          });
-    </script>
+    <!-- Overlay for mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scroll Indicator Dots -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        <div class="scroll-dot active" data-section="home" data-label="Home"></div>
+        <div class="scroll-dot" data-section="about" data-label="About"></div>
+        <div class="scroll-dot" data-section="stack" data-label="Stack"></div>
+        <div class="scroll-dot" data-section="experience" data-label="Experience"></div>
+        <div class="scroll-dot" data-section="projects" data-label="Projects"></div>
+        <div class="scroll-dot" data-section="contact" data-label="Contact"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
