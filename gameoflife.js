@@ -133,14 +133,52 @@ class GameOfLife {
     }
     
     resizeCanvas() {
+        // Store the current state
+        const oldGrid = this.grid ? JSON.parse(JSON.stringify(this.grid)) : null;
+        const oldCols = this.cols;
+        const oldRows = this.rows;
+        
+        // Update canvas size
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
+        
+        // Recalculate grid dimensions
+        const newCols = Math.floor(this.canvas.width / this.cellSize);
+        const newRows = Math.floor(this.canvas.height / this.cellSize);
+        
+        // Only reinitialize if dimensions actually changed
+        if (newCols !== oldCols || newRows !== oldRows) {
+            this.cols = newCols;
+            this.rows = newRows;
+            
+            // Create new grids
+            const newGrid = this.createEmptyGrid();
+            const newNextGrid = this.createEmptyGrid();
+            
+            // Copy over old cells if we had a previous grid
+            if (oldGrid) {
+                const minRows = Math.min(oldRows, newRows);
+                const minCols = Math.min(oldCols, newCols);
+                for (let i = 0; i < minRows; i++) {
+                    for (let j = 0; j < minCols; j++) {
+                        newGrid[i][j] = oldGrid[i][j];
+                    }
+                }
+            }
+            
+            this.grid = newGrid;
+            this.nextGrid = newNextGrid;
+        }
     }
     
     setupEventListeners() {
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            this.resizeCanvas();
-            this.init();
+            // Debounce resize events
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                this.resizeCanvas();
+            }, 100);
         });
     }
     
