@@ -2,13 +2,25 @@
 // Navigation & Section Management
 // ===================================
 document.addEventListener('DOMContentLoaded', function() {
+    // Force scroll to home page on load
+    const mainContent = document.querySelector('.main-content');
+    const homeSection = document.getElementById('home');
+    
+    // Immediately scroll to top without animation
+    if (mainContent && homeSection) {
+        mainContent.scrollTop = 0;
+        // Use setTimeout to ensure it stays at home
+        setTimeout(() => {
+            mainContent.scrollTop = 0;
+        }, 100);
+    }
+    
     // Get all catalog links and sections
     const catalogLinks = document.querySelectorAll('.catalog-link');
     const sections = document.querySelectorAll('.section');
     const catalogToggle = document.getElementById('catalogToggle');
     const rightCatalog = document.getElementById('rightCatalog');
     const overlay = document.getElementById('overlay');
-    const mainContent = document.querySelector('.main-content');
     const scrollDots = document.querySelectorAll('.scroll-dot');
 
     // Initial section animation
