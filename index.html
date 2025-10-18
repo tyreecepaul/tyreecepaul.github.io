@@ -81,6 +81,20 @@
         <!-- Home Section -->
         <section id="home" class="section">
             <div class="container">
+                <!-- Pong Game -->
+                <div class="pong-container">
+                    <div class="pong-game">
+                        <canvas id="pongCanvas"></canvas>
+                        <div class="pong-controls">
+                            <button id="pongModeBtn" class="pong-btn">Switch to Player vs AI</button>
+                            <button id="pongResetBtn" class="pong-btn">Reset</button>
+                        </div>
+                        <div class="pong-instructions">
+                            <span class="pong-help">Use ↑↓ or W/S keys to control left paddle in player mode</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="hero-content">
                     <h1 class="hero-title">Hello, I'm Tyreece</I></h1>
                     <h2 class="hero-subtitle">Computer Science [ML] / Mathematics [MAI]</h2>
@@ -572,6 +586,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="gameoflife.js"></script>
+    <script src="pong.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

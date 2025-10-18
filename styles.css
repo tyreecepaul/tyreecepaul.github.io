@@ -669,9 +669,82 @@ body {
 
 #home .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    gap: var(--spacing-xl);
+    padding-top: var(--spacing-2xl);
 }
+
+/* ===================================
+   Pong Game Container
+   =================================== */
+.pong-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    order: -1;
+}
+
+.pong-game {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+}
+
+#pongCanvas {
+    border: 2px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: rgba(15, 15, 20, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(107, 127, 215, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.pong-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.pong-btn {
+    padding: 0.5rem 1rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+}
+
+.pong-btn:hover {
+    background: var(--primary-color);
+    color: var(--text-primary);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 127, 215, 0.3);
+}
+
+.pong-btn:active {
+    transform: translateY(0);
+}
+
+.pong-instructions {
+    text-align: center;
+}
+
+.pong-help {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-style: italic;
+}
+
 
 .hero-content {
     text-align: center;
