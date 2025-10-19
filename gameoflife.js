@@ -9,9 +9,9 @@ class GameOfLife {
         this.ctx = this.canvas.getContext('2d');
         this.cellSize = options.cellSize || 10;
         this.updateInterval = options.updateInterval || 150;
-        this.aliveColor = options.aliveColor || 'rgba(107, 127, 215, 0.6)';
+        this.aliveColor = options.aliveColor || 'rgba(255, 255, 255, 0.04)';  // Subtle gray
         this.deadColor = options.deadColor || 'rgba(0, 0, 0, 0)';
-        this.gridColor = options.gridColor || 'rgba(107, 127, 215, 0.05)';
+        this.gridColor = options.gridColor || 'rgba(255, 255, 255, 0.02)';  // Subtle gray grid
         this.showGrid = options.showGrid !== undefined ? options.showGrid : false;
         
         this.cols = 0;
@@ -347,9 +347,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const gameOfLife = new GameOfLife('gameOfLifeCanvas', {
         cellSize: 25,
         updateInterval: 350,
-        aliveColor: 'rgba(107, 127, 215, 0.08)',
+        aliveColor: 'rgba(255, 255, 255, 0.035)',  // Subtle gray - professional
         deadColor: 'rgba(0, 0, 0, 0)',
-        gridColor: 'rgba(107, 127, 215, 0.02)',
+        gridColor: 'rgba(255, 255, 255, 0.015)',  // Very subtle gray grid
         showGrid: false
     });
     
