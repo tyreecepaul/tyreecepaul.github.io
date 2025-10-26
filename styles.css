@@ -1927,6 +1927,7 @@ button:active::after,
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
 .experience-timeline::before {
@@ -2354,6 +2355,13 @@ button:active::after,
     font-weight: 500;
 }
 
+.contact-social {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
 .contact-social h4 {
     font-size: 1.4rem;
     color: var(--text-primary);
@@ -2776,7 +2784,7 @@ button:active::after,
     
     .about-content {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
     }
     
     .asteroids-container {
@@ -2788,7 +2796,7 @@ button:active::after,
     }
     
     .about-left {
-        gap: 2.5rem;
+        gap: 2rem;
     }
     
     .about-image {
@@ -2798,7 +2806,15 @@ button:active::after,
     }
     
     .stack-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .stack-category {
+        padding: 1.25rem;
+    }
+    
+    .experience-timeline {
         gap: 1.75rem;
     }
     
@@ -2864,18 +2880,35 @@ button:active::after,
     }
     
     .section {
-        padding: 3rem 1.5rem;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 2.5rem 1.25rem !important;
+        overflow-y: visible !important;
     }
     
     #about,
     #stack,
     #experience,
     #contact {
-        padding: 3rem 1.5rem;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 2.5rem 1.25rem !important;
     }
     
     #projects {
-        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 2rem 1.25rem 1.5rem 1.25rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .section-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
     }
     
     .contact-content {
@@ -2883,15 +2916,23 @@ button:active::after,
         gap: 2rem;
     }
     
+    .contact-methods {
+        gap: 1rem;
+    }
+    
+    .contact-social {
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+    
     .social-links-large {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
-    
+
     .contact-form-wrapper {
         padding: 1.5rem;
-    }
-    
-    #home .container {
+    }    #home .container {
         padding: 2rem 1rem;
         gap: 2rem;
     }
@@ -2978,32 +3019,110 @@ button:active::after,
         padding: 0.45rem 0.8rem;
     }
     
-    .stack-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .about-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
     }
     
+    .about-left {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+    
+    .about-image {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .about-text h3 {
+        font-size: 1.3rem;
+        line-height: 1.4;
+    }
+    
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .skills-section {
+        margin-top: 1.5rem;
+    }
+    
+    .skills-section h4 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .skills-grid {
+        gap: 0.5rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .stack-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+    
+    .stack-category {
+        padding: 1.25rem;
+    }
+    
+    .stack-category h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .category-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .stack-items {
+        gap: 0.75rem;
+    }
+    
+    .stack-item {
+        padding: 0.75rem 0.9rem;
+        font-size: 0.9rem;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     #projects .section-title {
         font-size: 2rem;
-    }
-    
-    #projects .section-description {
+    }    #projects .section-description {
         margin-bottom: 1.25rem;
         font-size: 1rem;
+    }
+    
+    .experience-timeline {
+        gap: 1.5rem;
+        padding: 0;
     }
     
     .experience-timeline::before {
         left: 20px;
     }
-    
+
     .experience-item {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        margin-bottom: 1.5rem !important;
     }
     
     .experience-item::before {
@@ -3014,27 +3133,113 @@ button:active::after,
         text-align: left;
         padding-left: 3rem;
         padding-top: 0;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        font-weight: 600;
     }
     
     .experience-header {
-        padding: 1.5rem;
+        padding: 1.25rem;
         flex-direction: column;
         align-items: stretch;
+        gap: 0.75rem;
+    }
+    
+    .experience-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .experience-header h4 {
+        font-size: 0.95rem;
+    }
+    
+    .experience-summary {
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
     
     .expand-btn {
         align-self: flex-end;
+        margin-top: 0.5rem;
     }
     
     .experience-details {
-        padding: 0 1.5rem;
+        padding: 0 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .experience-details h5 {
+        font-size: 0.95rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .experience-achievements {
+        padding-left: 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .experience-achievements li {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
     }
     
     .experience-item.expanded .experience-details {
-        padding: 0 1.5rem 1.5rem 1.5rem;
+        padding: 0 1.25rem 1.25rem 1.25rem;
     }
     
+    .exp-tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.7rem;
+    }
+    
+    .contact-content {
+        gap: 2rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .contact-methods {
+        gap: 1rem;
+    }
+    
+    .contact-method {
+        padding: 0.9rem;
+    }
+    
+    .contact-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    
+    .contact-details h4 {
+        font-size: 0.95rem;
+    }
+    
+    .contact-details p,
+    .contact-details a {
+        font-size: 0.85rem;
+    }
+    
+    .contact-social {
+        margin-top: 1.5rem;
+    }
+    
+    .contact-social h4 {
+        font-size: 1.2rem;
+    }
+    
+    .social-links-large a {
+        padding: 1rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .contact-form-wrapper h3 {
+        font-size: 1.2rem;
+    }
+
     /* Hide scroll indicator on mobile */
     .scroll-indicator {
         display: none;
@@ -3056,6 +3261,59 @@ button:active::after,
         width: 100%;
     }
     
+    /* Make panel close button more visible on tablets */
+    .panel-close {
+        width: 44px;
+        height: 44px;
+        background: rgba(30, 30, 40, 0.8);
+        border: 1px solid var(--border-color);
+    }
+    
+    .panel-close:hover {
+        background: var(--bg-medium);
+    }
+
+    /* Mobile project cards */
+    .projects-grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }    .project-card {
+        max-width: 100%;
+    }
+    
+    .project-title {
+        font-size: 1.05rem !important;
+    }
+    
+    .project-subheading {
+        font-size: 0.8rem;
+    }
+    
+    .project-mini {
+        font-size: 0.85rem;
+    }
+    
+    .project-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-ghost,
+    .btn-view-project {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .project-actions .btn-view-project {
+        margin-left: 0;
+    }
+    
+    /* Ensure overlay works on mobile */
+    .overlay.active {
+        display: block;
+    }
+    
     .container {
         padding: 0 1rem;
     }
@@ -3063,17 +3321,24 @@ button:active::after,
 
 @media (max-width: 480px) {
     .section {
-        padding: 2.5rem 1rem;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 2rem 1rem !important;
+        overflow-y: visible !important;
     }
     
     #about,
     #stack,
     #experience {
-        padding: 2.5rem 1rem;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 2rem 1rem !important;
     }
     
     #projects {
-        padding: 2rem 1rem 1rem 1rem;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 1.75rem 1rem 1rem 1rem !important;
     }
     
     .container {
@@ -3083,6 +3348,317 @@ button:active::after,
     #home .container {
         padding: 1.5rem 0.75rem;
         gap: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* About Me - Ultra compact */
+    .about-content {
+        gap: 1.5rem !important;
+    }
+    
+    .about-left {
+        gap: 1rem !important;
+    }
+    
+    .about-image {
+        max-width: 100% !important;
+    }
+    
+    .image-gallery {
+        aspect-ratio: 1;
+        border-radius: 0.75rem;
+    }
+    
+    .gallery-controls {
+        margin-top: 0.75rem;
+    }
+    
+    .gallery-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .gallery-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .image-placeholder {
+        font-size: 1.1rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.1rem;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+    }
+    
+    .about-text p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+    }
+    
+    .skills-section {
+        margin-top: 1rem;
+    }
+    
+    .skills-section h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .skills-grid {
+        gap: 0.4rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.7rem;
+    }
+    
+    /* Stack - Compact */
+    .stack-grid {
+        gap: 1rem;
+    }
+    
+    .stack-category {
+        padding: 1rem;
+    }
+    
+    .stack-category h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .category-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .stack-items {
+        gap: 0.6rem;
+    }
+    
+    .stack-item {
+        padding: 0.65rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .stack-item-icon {
+        font-size: 1rem;
+    }
+    
+    /* Experience - Compact and scrollable */
+    .experience-timeline {
+        gap: 1.25rem;
+    }
+    
+    .experience-item {
+        margin-bottom: 1rem;
+    }
+    
+    .experience-date {
+        font-size: 0.7rem;
+        padding-left: 2.75rem;
+    }
+    
+    .experience-header {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .experience-header h3 {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .experience-header h4 {
+        font-size: 0.875rem;
+    }
+    
+    .experience-summary {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .experience-details {
+        padding: 0 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .experience-details p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .experience-details h5 {
+        font-size: 0.9rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .experience-achievements {
+        padding-left: 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .experience-achievements li {
+        margin-bottom: 0.4rem;
+        line-height: 1.4;
+    }
+    
+    .experience-item.expanded .experience-details {
+        padding: 0 1rem 1rem 1rem;
+    }
+    
+    .exp-tag {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .experience-tags {
+        gap: 0.35rem;
+    }
+    
+    /* Contact - Compact */
+    .contact-content {
+        gap: 1.5rem;
+    }
+    
+    .contact-info h3,
+    .contact-social h4,
+    .contact-form-wrapper h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .contact-methods {
+        gap: 0.75rem;
+    }
+    
+    .contact-method {
+        padding: 0.75rem;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.95rem;
+    }
+    
+    .contact-details h4 {
+        font-size: 0.875rem;
+    }
+    
+    .contact-details p,
+    .contact-details a {
+        font-size: 0.8rem;
+    }
+    
+    .contact-social {
+        margin-top: 1.25rem;
+    }
+    
+    .social-links-large a {
+        padding: 0.875rem 0.65rem;
+        font-size: 0.85rem;
+        gap: 0.4rem;
+    }
+    
+    .social-links-large a i {
+        font-size: 1.25rem;
+    }
+
+    /* Ultra-mobile project cards */
+    .project-title {
+        font-size: 1rem !important;
+    }
+    
+    .project-subheading {
+        font-size: 0.75rem;
+    }
+    
+    .project-mini {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .project-image {
+        height: 140px;
+    }
+    
+    .btn-ghost,
+    .btn-view-project {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Panel takes full screen on small phones */
+    .project-panel {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .panel-close {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+        background: rgba(30, 30, 40, 0.9);
+        border: 1px solid var(--border-color);
+    }
+    
+    .panel-close:hover {
+        background: var(--bg-medium);
+    }
+    
+    /* Add gaps to sections on small screens */
+    .about-left {
+        gap: 1.25rem;
+    }
+    
+    .stack-grid {
+        gap: 1.25rem;
+    }
+    
+    .stack-category {
+        padding: 1rem;
+    }
+    
+    .stack-items {
+        gap: 0.6rem;
+    }
+    
+    .experience-timeline {
+        gap: 1.25rem;
+    }
+    
+    .experience-item {
+        margin-bottom: 1.25rem;
+    }
+    
+    .contact-content {
+        gap: 1.5rem;
+    }
+    
+    .contact-methods {
+        gap: 0.75rem;
+    }
+    
+    .contact-social {
+        margin-top: 1.25rem;
     }
     
     .hero-title {
