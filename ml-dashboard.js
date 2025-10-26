@@ -1,8 +1,3 @@
-// ===================================
-// StyleGAN2 Training Dashboard
-// Progressive image generation from noise to profile picture
-// ===================================
-
 class MLTrainingDashboard {
     constructor(containerId, options = {}) {
         this.container = document.getElementById(containerId);
@@ -57,7 +52,7 @@ class MLTrainingDashboard {
         };
 
         // Chart configuration
-        this.chartPadding = { top: 50, right: 15, bottom: 35, left: 55 };
+        this.chartPadding = { top: 42, right: 12, bottom: 28, left: 48 };
         this.colors = {
             generator: '#10a37f',      // Teal for generator
             discriminator: '#ff6b6b',  // Red for discriminator
@@ -244,9 +239,9 @@ class MLTrainingDashboard {
         this.ctx.fillRect(0, 0, w, h);
 
         // Layout: Header at top, then left side for charts, right side for progressive generation
-        const margin = 15;
-        const headerHeight = 75;
-        const gap = 12;
+        const margin = 12;
+        const headerHeight = 68;
+        const gap = 14;
 
         // Calculate available space
         const availableWidth = w - (margin * 2);
@@ -255,19 +250,20 @@ class MLTrainingDashboard {
         // Header takes top section
         const headerY = margin;
         const contentStartY = headerY + headerHeight + gap;
-        const contentHeight = availableHeight - headerHeight - gap;
+        const contentHeight = Math.max(50, availableHeight - headerHeight - gap);
 
         // Split content area: 55% for charts (left), 45% for progressive image (right)
-        const chartsWidth = availableWidth * 0.53;
-        const imageWidth = availableWidth * 0.45;
+        const chartsWidth = availableWidth * 0.54;
+        const imageWidth = Math.max(100, availableWidth * 0.44);
         const imageX = margin + chartsWidth + gap;
 
         // Draw header
         this.drawHeader(margin, headerY, availableWidth, headerHeight);
 
         // Draw charts in 2x2 grid on left
-        const chartWidth = (chartsWidth - gap) / 2;
-        const chartHeight = (contentHeight - gap) / 2;
+        // Ensure minimum sizes and no overlap
+        const chartWidth = Math.max(80, (chartsWidth - gap) / 2);
+        const chartHeight = Math.max(80, (contentHeight - gap) / 2);
         
         const charts = [
             { type: 'losses', x: margin, y: contentStartY, w: chartWidth, h: chartHeight },
@@ -323,20 +319,16 @@ class MLTrainingDashboard {
         const progressBarWidth = w - (padding * 2);
         const progress = this.currentIteration / this.maxIterations;
         
-        // Iteration counter and status
+        // FID Score display and status
         ctx.font = '8px JetBrains Mono';
-        ctx.fillStyle = this.colors.text;
         ctx.textBaseline = 'bottom';
-        const kIter = (this.currentIteration / 1000).toFixed(1);
-        const kMax = (this.maxIterations / 1000).toFixed(0);
-        ctx.fillText(`${kIter}k / ${kMax}k iterations`, textX, progressBarY - 8);
         
-        // FID Score display
+        // FID Score display (center)
         ctx.textAlign = 'center';
         ctx.fillStyle = this.colors.fid;
         ctx.fillText(`FID: ${this.currentMetrics.fid.toFixed(1)}`, x + w / 2, progressBarY - 8);
         
-        // Status indicator
+        // Status indicator (right side)
         const statusText = this.isTraining ? (this.isPaused ? 'PAUSED' : 'TRAINING') : 'STOPPED';
         const statusColor = this.isTraining && !this.isPaused ? this.colors.accent : this.colors.text;
         const statusIndicator = '● ' + statusText;

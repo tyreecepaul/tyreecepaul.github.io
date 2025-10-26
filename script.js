@@ -170,41 +170,63 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Open project panel
+    function openProjectPanelById(projectId) {
+        const project = projectData[projectId];
+        if (!project) return;
+
+        // Update panel content
+        panelTitle.textContent = project.title;
+        panelDescription.textContent = project.description;
+
+        // Update features list
+        panelFeatures.innerHTML = project.features
+            .map(feature => `<li>${feature}</li>`)
+            .join('');
+
+        // Update technologies
+        panelTechnologies.innerHTML = project.technologies
+            .map(tech => `<span class="tech-badge">${tech}</span>`)
+            .join('');
+
+        // Update links
+        const panelLinks = document.querySelector('.panel-links');
+        if (panelLinks) {
+            panelLinks.innerHTML = `
+                <a href="${project.github}" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="${project.demo}" class="btn btn-outline" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            `;
+        }
+
+        // Show panel
+        if (projectPanel) projectPanel.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+    }
+
+    // Attach click to entire card (existing behavior)
     projectCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            // If the click came from a button inside the card, let the button handler run
+            const targetBtn = e.target.closest('.btn-view-project');
+            if (targetBtn) return; // button handler will handle it
+
             const projectId = this.getAttribute('data-project');
-            const project = projectData[projectId];
-            
-            if (project) {
-                // Update panel content
-                panelTitle.textContent = project.title;
-                panelDescription.textContent = project.description;
-                
-                // Update features list
-                panelFeatures.innerHTML = project.features
-                    .map(feature => `<li>${feature}</li>`)
-                    .join('');
-                
-                // Update technologies
-                panelTechnologies.innerHTML = project.technologies
-                    .map(tech => `<span class="tech-badge">${tech}</span>`)
-                    .join('');
-                
-                // Update links
-                const panelLinks = document.querySelector('.panel-links');
-                panelLinks.innerHTML = `
-                    <a href="${project.github}" class="btn btn-primary" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                    <a href="${project.demo}" class="btn btn-outline" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                `;
-                
-                // Show panel
-                projectPanel.classList.add('active');
-                overlay.classList.add('active');
-            }
+            openProjectPanelById(projectId);
+        });
+    });
+
+    // Also attach click handlers to the explicit "View Details" buttons (safer)
+    const viewButtons = document.querySelectorAll('.btn-view-project');
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const card = this.closest('.project-card');
+            if (!card) return;
+            const projectId = card.getAttribute('data-project');
+            openProjectPanelById(projectId);
         });
     });
 

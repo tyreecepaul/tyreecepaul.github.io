@@ -1646,6 +1646,9 @@ button:active::after,
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-speed);
+    position: relative;
+    z-index: 5;
+    pointer-events: auto;
 }
 
 .btn-view-project:hover {
