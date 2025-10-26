@@ -491,74 +491,71 @@
                 <h2 class="section-title">Projects</h2>
                 <p class="section-description">A selection of recent work in ML, data viz, and software. Click any card to open details.</p>
 
-                <div class="projects-grid">
-                    <!-- Project Card 1 -->
-                    <div class="project-card" data-project="1">
-                        <div class="project-image" style="background: linear-gradient(135deg,#0b0b0b,#121212)">
-                            <i class="fas fa-brain fa-3x" style="color: #10a37f;"></i>
+                <div class="projects-grid projects-grid-3">
+                    <!-- Compact card - 1 -->
+                    <article class="project-card" data-project="1" role="article" aria-label="NFL Big Data Bowl 2026">
+                        <div class="project-image" style="background: url('src/NFL2026.png') center/cover no-repeat, linear-gradient(135deg,#0b0b0b,#121212)">
+                            <div class="project-type type-accent-1">ML</div>
                         </div>
                         <div class="project-info">
-                            <h3>NFL Big Data Bowl 2026</h3>
-                            <p class="project-sub">Player trajectory prediction (GRU) — Bronze Medal.</p>
+                            <h3 class="project-title">NFL Big Data Bowl 2026</h3>
+                            <h4 class="project-subheading">Player trajectory forecasting</h4>
+                            <p class="project-mini">GRU-based sequence model for short-term trajectory prediction, Top 5% placement.</p>
                             <div class="project-tags">
                                 <span class="tag">PyTorch</span>
-                                <span class="tag">GRU</span>
+                                <span class="tag">Time-Series Analysis</span>
+                                <span class="tag">Sports Analytics</span>
                                 <span class="tag">Kaggle</span>
                             </div>
-                            <button class="btn-view-project">View Details</button>
+                            <div class="project-actions">
+                                <a href="https://www.kaggle.com/competitions/nfl-big-data-bowl-2026-prediction/overview" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Competition</a>
+                                <button class="btn-view-project">See details</button>
+                            </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Project Card 2 -->
-                    <div class="project-card" data-project="2">
-                        <div class="project-image" style="background: linear-gradient(135deg,#0b0b0b,#121212)">
-                            <i class="fas fa-football-ball fa-3x" style="color: #ff6b6b;"></i>
+                    <!-- Compact card - 2 -->
+                    <article class="project-card" data-project="2" role="article" aria-label="MLSW Audio Visualisation">
+                        <div class="project-image" style="background: url('src/MLSW.png') center/cover no-repeat, linear-gradient(135deg,#0b0b0b,#121212)">
+                            <div class="project-type type-accent-2">Viz</div>
                         </div>
                         <div class="project-info">
-                            <h3>NFL Player Tracking System</h3>
-                            <p class="project-sub">Real-time Canvas visualization with phase-aware rendering.</p>
+                            <h3 class="project-title">MLSW Audio Viusalisation</h3>
+                            <h4 class="project-subheading">Mulilingual Audio Feature Analysis</h4>
+                            <p class="project-mini">Monolingual and bilingual analysis of English and Spanish spoken words. Achieved Grade: 95%.</p>
                             <div class="project-tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Canvas</span>
-                                <span class="tag">Python</span>
+                                <span class="tag">Data Science</span>
+                                <span class="tag">Audio Analysis</span>
+                                <span class="tag">Feature Extraction</span>
                             </div>
-                            <button class="btn-view-project">View Details</button>
+                            <div class="project-actions">
+                                <a href="https://github.com/tyreecepaul/mlsw-feature-extraction" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Repository</a>
+                                <button class="btn-view-project">See details</button>
+                            </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Project Card 3 -->
-                    <div class="project-card" data-project="3">
-                        <div class="project-image" style="background: linear-gradient(135deg,#0b0b0b,#121212)">
-                            <i class="fas fa-project-diagram fa-3x" style="color: #4ecdc4;"></i>
+                    <!-- Compact card - 3 -->
+                    <article class="project-card" data-project="3" role="article" aria-label="StyleGAN2 for Medical Imaging">
+                        <div class="project-image" style="background: url('src/ADNI.png') center/cover no-repeat, linear-gradient(135deg,#0b0b0b,#121212)">
+                            <div class="project-type type-accent-3">DL</div>
                         </div>
                         <div class="project-info">
-                            <h3>Neural Collaborative Filtering</h3>
-                            <p class="project-sub">NCF recommendation system on MovieLens-1M.</p>
+                            <h3 class="project-title">StyleGAN2 for Medical Imaging</h3>
+                            <h4 class="project-subheading">Generative Deep Learning Model</h4>
+                            <p class="project-mini">Conditional StyleGAN2 for ADNI (Alzheimer's Disease Neuroimaging Initiative).</p>
                             <div class="project-tags">
-                                <span class="tag">TensorFlow</span>
-                                <span class="tag">ML</span>
-                                <span class="tag">Recommenders</span>
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">Generative AI</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">Medical Imaging</span>
                             </div>
-                            <button class="btn-view-project">View Details</button>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 4 -->
-                    <div class="project-card" data-project="4">
-                        <div class="project-image" style="background: linear-gradient(135deg,#0b0b0b,#121212)">
-                            <i class="fas fa-chart-line fa-3x" style="color: #ffd93d;"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>Interactive Dashboards</h3>
-                            <p class="project-sub">Canvas and D3 visualizations for model training and analytics.</p>
-                            <div class="project-tags">
-                                <span class="tag">D3.js</span>
-                                <span class="tag">Canvas</span>
-                                <span class="tag">Visualization</span>
+                            <div class="project-actions">
+                                <a href="https://github.com/tyreecepaul/PatternAnalysis-2025/tree/topic-recognition/recognition" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Repository</a>
+                                <button class="btn-view-project">See details</button>
                             </div>
-                            <button class="btn-view-project">View Details</button>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>

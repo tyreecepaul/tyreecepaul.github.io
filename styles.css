@@ -1532,14 +1532,21 @@ button:active::after,
 /* Compact project cards for better fit */
 .project-card {
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-image {
     aspect-ratio: 16/10;
+    flex-shrink: 0;
 }
 
 .project-info {
     padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .project-info h3 {
@@ -1551,6 +1558,102 @@ button:active::after,
     font-size: 0.9rem;
     margin-bottom: 0.75rem;
     line-height: 1.5;
+}
+
+/* Three-column grid layout */
+.projects-grid-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+    .projects-grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .projects-grid-3 {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Type bubble styling */
+.project-type {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    color: var(--bg-darkest);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    z-index: 10;
+}
+
+.type-accent-1 { background: #10a37f; }
+.type-accent-2 { background: #ff6b6b; }
+.type-accent-3 { background: #4ecdc4; }
+
+/* Project title and subheading */
+.project-title { 
+    font-size: 1.1rem !important; 
+    margin-bottom: 0.35rem !important;
+    line-height: 1.3;
+}
+
+.project-subheading { 
+    font-size: 0.85rem; 
+    color: var(--primary-color); 
+    margin-bottom: 0.6rem; 
+    font-weight: 600;
+}
+
+.project-mini { 
+    font-size: 0.88rem; 
+    color: var(--text-secondary); 
+    margin-bottom: 0.85rem;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Project actions */
+.project-actions { 
+    display: flex; 
+    gap: 0.5rem; 
+    align-items: center;
+    margin-top: auto;
+}
+
+.btn-ghost { 
+    background: transparent; 
+    border: 1px solid var(--border-subtle); 
+    color: var(--text-primary); 
+    padding: 0.5rem 0.75rem; 
+    border-radius: 0.5rem; 
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all var(--transition-speed);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-ghost:hover { 
+    transform: translateY(-2px); 
+    border-color: var(--primary-light);
+    background: var(--bg-medium);
+    color: var(--text-primary);
+}
+
+.project-actions .btn-view-project { 
+    margin-left: auto; 
+    min-width: 110px;
+    width: auto;
+}
+
+.project-tags { 
+    margin-bottom: 0.85rem;
 }
 
 .project-card {
